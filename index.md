@@ -1,37 +1,39 @@
-## Welcome to GitHub Pages
+# Automatic 3D Reconstruction from Multi-Date Satellite Images
 
-You can use the [editor on GitHub](https://github.com/gfacciol/EV2017/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
-### Markdown
+## Training site 
+![median aggregation of 700 pairs](img/explorer/fusion_heuristicNEW_N700_med.png =250x)
+![median aggregation of 50 pairs](img/explorer/fusion_heuristicNEW_N50_med.png =250x)
+![k-medians aggregation of 50 pairs](img/explorer/fusion_heuristicNEW_N50_kmedianslow.png =250x)
+![gt](img/explorer/Explorern.png =250x)
+![error median aggregation of 700 pairs](img/explorer/fusion_heuristicNEW_N700_med_diff.png =250x)
+![error median aggregation of 50 pairs](img/explorer/fusion_heuristicNEW_N50_med_diff.png =250x)
+![error k-medians aggregation of 50 pairs](img/explorer/fusion_heuristicNEW_N50_kmedianslow_diff.png =250x)
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+## Test site 1
+![median aggregation of 50 pairs](img/master/all_pairs_site1_fusion_heuristicNEW_N50_med_.png =250x)
+![k-medians aggregation of 50 pairs](img/master/all_pairs_site1_fusion_heuristicNEW_N50_kmedianslow_.png =250x)
+![gt](img/master/MasterProvisional1nn.png =250x)
+![error median aggregation of 50 pairs](img/master/all_pairs_site1_fusion_heuristicNEW_N50_med__diff.png =250x)
+![error  k-medians aggregation of 50 pairs](img/master/all_pairs_site1_fusion_heuristicNEW_N50_kmedianslow__diff.png =250x)
 
-```markdown
-Syntax highlighted code block
 
-# Header 1
-## Header 2
-### Header 3
+## Test site 2
+![median aggregation of 50 pairs](img/master/all_pairs_site2_fusion_heuristicNEW_N50_med_.png =250x)
+![k-medians aggregation of 50 pairs](img/master/all_pairs_site2_fusion_heuristicNEW_N50_kmedianslow_.png =250x)
+![gt](img/master/MasterProvisional2nn.png =250x)
+![error median aggregation of 50 pairs](img/master/all_pairs_site2_fusion_heuristicNEW_N50_med__diff.png =250x)
+![error  k-medians aggregation of 50 pairs](img/master/all_pairs_site2_fusion_heuristicNEW_N50_kmedianslow__diff.png =250x)
 
-- Bulleted
-- List
 
-1. Numbered
-2. List
+## Test site 3
+![median aggregation of 50 pairs](img/master/all_pairs_site3_fusion_heuristicNEW_N50_med_.png =250x)
+![k-medians aggregation of 50 pairs](img/master/all_pairs_site3_fusion_heuristicNEW_N50_kmedianslow_.png =250x)
+![gt](img/master/MasterProvisional3nn.png =250x)
+![error median aggregation of 50 pairs](img/master/all_pairs_site3_fusion_heuristicNEW_N50_med__diff.png =250x)
+![error  k-medians aggregation of 50 pairs](img/master/all_pairs_site3_fusion_heuristicNEW_N50_kmedianslow__diff.png =250x)
 
-**Bold** and _Italic_ and `Code` text
 
-[Link](url) and ![Image](src)
-```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
 
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/gfacciol/EV2017/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
