@@ -1,6 +1,7 @@
-<style>
- body {background-color: white;}
-</style>
+---
+layout: net
+title: 3D reconstruction from Multi-date Satellite Images
+---
 
 <h1>3D Reconstruction from Multi-Date Satellite Images</h1>
 
@@ -16,64 +17,124 @@ presented at CVPR2017.
 
 <h3>0.2. Sites of interest</h3>
 
-<p>The site ``Boulogne'' has low-rise buildings arranged in octagonal patterns,
+<p>The site <b>Boulogne</b> has low-rise buildings arranged in octagonal patterns,
 and a high water tower formed by three cylinders.  In the IARPA challenge, it
 was used as dataset for the the explorer (preliminary) contest.</p>
 
-<p> The following gallery shows the 47 input images cropped around the center
-of the water tower at size 800x600.  Notice that the orientation and the
-ground resolution of each image is different, due to the arbitrary acquisition directions.  Notice also that the dynamic range of each image is different, due to the seasons and to the cyrrus cover.</p>
+<p> The following gallery shows the 47 input images cropped at size 800x600
+around the center of the Boulogne water tower.  Notice that the orientation and
+the ground resolution of each image is different, due to the arbitrary
+acquisition directions.  Notice also that the dynamic range of each image is
+different, due to the seasons and to the cyrrus cover.</p>
 
 <div class="gallery" type="height:600px">
 	<ul class="index">
-		<li><a href="#">01<span><img src="img/inputs/voulogne_original_01.jpg" /></span</a></li>
-		<li><a href="#">02<span><img src="img/inputs/voulogne_original_01.jpg" /></span</a></li>
-		<li><a href="#">03<span><img src="img/inputs/voulogne_original_01.jpg" /></span</a></li>
-		<li><a href="#">04<span><img src="img/inputs/voulogne_original_01.jpg" /></span</a></li>
-		<li><a href="#">05<span><img src="img/inputs/voulogne_original_01.jpg" /></span</a></li>
-		<li><a href="#">06<span><img src="img/inputs/voulogne_original_01.jpg" /></span</a></li>
-		<li><a href="#">07<span><img src="img/inputs/voulogne_original_01.jpg" /></span</a></li>
-		<li><a href="#">08<span><img src="img/inputs/voulogne_original_01.jpg" /></span</a></li>
-		<li><a href="#">09<span><img src="img/inputs/voulogne_original_01.jpg" /></span</a></li>
-		<li><a href="#">10<span><img src="img/inputs/voulogne_original_01.jpg" /></span</a></li>
-		<li><a href="#">11<span><img src="img/inputs/voulogne_original_01.jpg" /></span</a></li>
-		<li><a href="#">12<span><img src="img/inputs/voulogne_original_01.jpg" /></span</a></li>
-		<li><a href="#">13<span><img src="img/inputs/voulogne_original_01.jpg" /></span</a></li>
-		<li><a href="#">14<span><img src="img/inputs/voulogne_original_01.jpg" /></span</a></li>
-		<li><a href="#">15<span><img src="img/inputs/voulogne_original_01.jpg" /></span</a></li>
-		<li><a href="#">16<span><img src="img/inputs/voulogne_original_01.jpg" /></span</a></li>
-		<li><a href="#">17<span><img src="img/inputs/voulogne_original_01.jpg" /></span</a></li>
-		<li><a href="#">18<span><img src="img/inputs/voulogne_original_01.jpg" /></span</a></li>
-		<li><a href="#">19<span><img src="img/inputs/voulogne_original_01.jpg" /></span</a></li>
-		<li><a href="#">20<span><img src="img/inputs/voulogne_original_01.jpg" /></span</a></li>
-		<li><a href="#">21<span><img src="img/inputs/voulogne_original_01.jpg" /></span</a></li>
-		<li><a href="#">22<span><img src="img/inputs/voulogne_original_01.jpg" /></span</a></li>
-		<li><a href="#">23<span><img src="img/inputs/voulogne_original_01.jpg" /></span</a></li>
-		<li><a href="#">24<span><img src="img/inputs/voulogne_original_01.jpg" /></span</a></li>
-		<li><a href="#">25<span><img src="img/inputs/voulogne_original_01.jpg" /></span</a></li>
-		<li><a href="#">26<span><img src="img/inputs/voulogne_original_01.jpg" /></span</a></li>
-		<li><a href="#">27<span><img src="img/inputs/voulogne_original_01.jpg" /></span</a></li>
-		<li><a href="#">28<span><img src="img/inputs/voulogne_original_01.jpg" /></span</a></li>
-		<li><a href="#">29<span><img src="img/inputs/voulogne_original_01.jpg" /></span</a></li>
-		<li><a href="#">30<span><img src="img/inputs/voulogne_original_01.jpg" /></span</a></li>
-		<li><a href="#">31<span><img src="img/inputs/voulogne_original_01.jpg" /></span</a></li>
-		<li><a href="#">32<span><img src="img/inputs/voulogne_original_01.jpg" /></span</a></li>
-		<li><a href="#">33<span><img src="img/inputs/voulogne_original_01.jpg" /></span</a></li>
-		<li><a href="#">34<span><img src="img/inputs/voulogne_original_01.jpg" /></span</a></li>
-		<li><a href="#">35<span><img src="img/inputs/voulogne_original_01.jpg" /></span</a></li>
-		<li><a href="#">36<span><img src="img/inputs/voulogne_original_01.jpg" /></span</a></li>
-		<li><a href="#">37<span><img src="img/inputs/voulogne_original_01.jpg" /></span</a></li>
-		<li><a href="#">38<span><img src="img/inputs/voulogne_original_01.jpg" /></span</a></li>
-		<li><a href="#">39<span><img src="img/inputs/voulogne_original_01.jpg" /></span</a></li>
-		<li><a href="#">40<span><img src="img/inputs/voulogne_original_01.jpg" /></span</a></li>
-		<li><a href="#">41<span><img src="img/inputs/voulogne_original_01.jpg" /></span</a></li>
-		<li><a href="#">42<span><img src="img/inputs/voulogne_original_01.jpg" /></span</a></li>
-		<li><a href="#">43<span><img src="img/inputs/voulogne_original_01.jpg" /></span</a></li>
-		<li><a href="#">44<span><img src="img/inputs/voulogne_original_01.jpg" /></span</a></li>
-		<li><a href="#">45<span><img src="img/inputs/voulogne_original_01.jpg" /></span</a></li>
-		<li><a href="#">46<span><img src="img/inputs/voulogne_original_01.jpg" /></span</a></li>
-		<li><a href="#">47<span><img src="img/inputs/voulogne_original_01.jpg" /></span</a></li>
-	</ul>
+		<li><a href="#">01<span><img src="img/inputs/voulogne_original_01.jpg" /></span></a></li>
+		<li><a href="#">02<span><img src="img/inputs/voulogne_original_02.jpg" /></span></a></li>
+		<li><a href="#">03<span><img src="img/inputs/voulogne_original_03.jpg" /></span></a></li>
+		<li><a href="#">04<span><img src="img/inputs/voulogne_original_04.jpg" /></span></a></li>
+		<li><a href="#">05<span><img src="img/inputs/voulogne_original_05.jpg" /></span></a></li>
+		<li><a href="#">06<span><img src="img/inputs/voulogne_original_06.jpg" /></span></a></li>
+		<li><a href="#">07<span><img src="img/inputs/voulogne_original_07.jpg" /></span></a></li>
+		<li><a href="#">08<span><img src="img/inputs/voulogne_original_08.jpg" /></span></a></li>
+		<li><a href="#">09<span><img src="img/inputs/voulogne_original_09.jpg" /></span></a></li>
+		<li><a href="#">10<span><img src="img/inputs/voulogne_original_10.jpg" /></span></a></li>
+		<li><a href="#">11<span><img src="img/inputs/voulogne_original_11.jpg" /></span></a></li>
+		<li><a href="#">12<span><img src="img/inputs/voulogne_original_12.jpg" /></span></a></li>
+		<li><a href="#">13<span><img src="img/inputs/voulogne_original_13.jpg" /></span></a></li>
+		<li><a href="#">14<span><img src="img/inputs/voulogne_original_14.jpg" /></span></a></li>
+		<li><a href="#">15<span><img src="img/inputs/voulogne_original_15.jpg" /></span></a></li>
+		<li><a href="#">16<span><img src="img/inputs/voulogne_original_16.jpg" /></span></a></li>
+		<li><a href="#">17<span><img src="img/inputs/voulogne_original_17.jpg" /></span></a></li>
+		<li><a href="#">18<span><img src="img/inputs/voulogne_original_18.jpg" /></span></a></li>
+		<li><a href="#">19<span><img src="img/inputs/voulogne_original_19.jpg" /></span></a></li>
+		<li><a href="#">20<span><img src="img/inputs/voulogne_original_20.jpg" /></span></a></li>
+		<li><a href="#">21<span><img src="img/inputs/voulogne_original_21.jpg" /></span></a></li>
+		<li><a href="#">22<span><img src="img/inputs/voulogne_original_22.jpg" /></span></a></li>
+		<li><a href="#">23<span><img src="img/inputs/voulogne_original_23.jpg" /></span></a></li>
+		<li><a href="#">24<span><img src="img/inputs/voulogne_original_24.jpg" /></span></a></li>
+		<li><a href="#">25<span><img src="img/inputs/voulogne_original_25.jpg" /></span></a></li>
+		<li><a href="#">26<span><img src="img/inputs/voulogne_original_26.jpg" /></span></a></li>
+		<li><a href="#">27<span><img src="img/inputs/voulogne_original_27.jpg" /></span></a></li>
+		<li><a href="#">28<span><img src="img/inputs/voulogne_original_28.jpg" /></span></a></li>
+		<li><a href="#">29<span><img src="img/inputs/voulogne_original_29.jpg" /></span></a></li>
+		<li><a href="#">30<span><img src="img/inputs/voulogne_original_30.jpg" /></span></a></li>
+		<li><a href="#">31<span><img src="img/inputs/voulogne_original_31.jpg" /></span></a></li>
+		<li><a href="#">32<span><img src="img/inputs/voulogne_original_32.jpg" /></span></a></li>
+		<li><a href="#">33<span><img src="img/inputs/voulogne_original_33.jpg" /></span></a></li>
+		<li><a href="#">34<span><img src="img/inputs/voulogne_original_34.jpg" /></span></a></li>
+		<li><a href="#">35<span><img src="img/inputs/voulogne_original_35.jpg" /></span></a></li>
+		<li><a href="#">36<span><img src="img/inputs/voulogne_original_36.jpg" /></span></a></li>
+		<li><a href="#">37<span><img src="img/inputs/voulogne_original_37.jpg" /></span></a></li>
+		<li><a href="#">38<span><img src="img/inputs/voulogne_original_38.jpg" /></span></a></li>
+		<li><a href="#">39<span><img src="img/inputs/voulogne_original_39.jpg" /></span></a></li>
+		<li><a href="#">40<span><img src="img/inputs/voulogne_original_40.jpg" /></span></a></li>
+		<li><a href="#">41<span><img src="img/inputs/voulogne_original_41.jpg" /></span></a></li>
+		<li><a href="#">42<span><img src="img/inputs/voulogne_original_42.jpg" /></span></a></li>
+		<li><a href="#">43<span><img src="img/inputs/voulogne_original_43.jpg" /></span></a></li>
+		<li><a href="#">44<span><img src="img/inputs/voulogne_original_44.jpg" /></span></a></li>
+		<li><a href="#">45<span><img src="img/inputs/voulogne_original_45.jpg" /></span></a></li>
+		<li><a href="#">46<span><img src="img/inputs/voulogne_original_46.jpg" /></span></a></li>
+		<li><a href="#">47<span><img src="img/inputs/voulogne_original_47.jpg" /></span></a></li>
+</div>
+
+<p>The following gallery shows the same 47 output images but, instead of being
+cropped, they are orthorectified to a geodesic surface at height 20m using the
+provided RPC calibration.  This should register all the points whose height is
+exactly 20m (about the ground level of this part of the city).  Instead, you
+see oscillations in many directions that are due to small inexactitudes in the
+satellite orientation.
+</p>
+
+<div class="gallery" type="height:600px">
+	<ul class="index">
+		<li><a href="#">01<span><img src="img/inputs/boulogne_ortho_01.jpg" /></span></a></li>
+		<li><a href="#">02<span><img src="img/inputs/boulogne_ortho_02.jpg" /></span></a></li>
+		<li><a href="#">03<span><img src="img/inputs/boulogne_ortho_03.jpg" /></span></a></li>
+		<li><a href="#">04<span><img src="img/inputs/boulogne_ortho_04.jpg" /></span></a></li>
+		<li><a href="#">05<span><img src="img/inputs/boulogne_ortho_05.jpg" /></span></a></li>
+		<li><a href="#">06<span><img src="img/inputs/boulogne_ortho_06.jpg" /></span></a></li>
+		<li><a href="#">07<span><img src="img/inputs/boulogne_ortho_07.jpg" /></span></a></li>
+		<li><a href="#">08<span><img src="img/inputs/boulogne_ortho_08.jpg" /></span></a></li>
+		<li><a href="#">09<span><img src="img/inputs/boulogne_ortho_09.jpg" /></span></a></li>
+		<li><a href="#">10<span><img src="img/inputs/boulogne_ortho_10.jpg" /></span></a></li>
+		<li><a href="#">11<span><img src="img/inputs/boulogne_ortho_11.jpg" /></span></a></li>
+		<li><a href="#">12<span><img src="img/inputs/boulogne_ortho_12.jpg" /></span></a></li>
+		<li><a href="#">13<span><img src="img/inputs/boulogne_ortho_13.jpg" /></span></a></li>
+		<li><a href="#">14<span><img src="img/inputs/boulogne_ortho_14.jpg" /></span></a></li>
+		<li><a href="#">15<span><img src="img/inputs/boulogne_ortho_15.jpg" /></span></a></li>
+		<li><a href="#">16<span><img src="img/inputs/boulogne_ortho_16.jpg" /></span></a></li>
+		<li><a href="#">17<span><img src="img/inputs/boulogne_ortho_17.jpg" /></span></a></li>
+		<li><a href="#">18<span><img src="img/inputs/boulogne_ortho_18.jpg" /></span></a></li>
+		<li><a href="#">19<span><img src="img/inputs/boulogne_ortho_19.jpg" /></span></a></li>
+		<li><a href="#">20<span><img src="img/inputs/boulogne_ortho_20.jpg" /></span></a></li>
+		<li><a href="#">21<span><img src="img/inputs/boulogne_ortho_21.jpg" /></span></a></li>
+		<li><a href="#">22<span><img src="img/inputs/boulogne_ortho_22.jpg" /></span></a></li>
+		<li><a href="#">23<span><img src="img/inputs/boulogne_ortho_23.jpg" /></span></a></li>
+		<li><a href="#">24<span><img src="img/inputs/boulogne_ortho_24.jpg" /></span></a></li>
+		<li><a href="#">25<span><img src="img/inputs/boulogne_ortho_25.jpg" /></span></a></li>
+		<li><a href="#">26<span><img src="img/inputs/boulogne_ortho_26.jpg" /></span></a></li>
+		<li><a href="#">27<span><img src="img/inputs/boulogne_ortho_27.jpg" /></span></a></li>
+		<li><a href="#">28<span><img src="img/inputs/boulogne_ortho_28.jpg" /></span></a></li>
+		<li><a href="#">29<span><img src="img/inputs/boulogne_ortho_29.jpg" /></span></a></li>
+		<li><a href="#">30<span><img src="img/inputs/boulogne_ortho_30.jpg" /></span></a></li>
+		<li><a href="#">31<span><img src="img/inputs/boulogne_ortho_31.jpg" /></span></a></li>
+		<li><a href="#">32<span><img src="img/inputs/boulogne_ortho_32.jpg" /></span></a></li>
+		<li><a href="#">33<span><img src="img/inputs/boulogne_ortho_33.jpg" /></span></a></li>
+		<li><a href="#">34<span><img src="img/inputs/boulogne_ortho_34.jpg" /></span></a></li>
+		<li><a href="#">35<span><img src="img/inputs/boulogne_ortho_35.jpg" /></span></a></li>
+		<li><a href="#">36<span><img src="img/inputs/boulogne_ortho_36.jpg" /></span></a></li>
+		<li><a href="#">37<span><img src="img/inputs/boulogne_ortho_37.jpg" /></span></a></li>
+		<li><a href="#">38<span><img src="img/inputs/boulogne_ortho_38.jpg" /></span></a></li>
+		<li><a href="#">39<span><img src="img/inputs/boulogne_ortho_39.jpg" /></span></a></li>
+		<li><a href="#">40<span><img src="img/inputs/boulogne_ortho_40.jpg" /></span></a></li>
+		<li><a href="#">41<span><img src="img/inputs/boulogne_ortho_41.jpg" /></span></a></li>
+		<li><a href="#">42<span><img src="img/inputs/boulogne_ortho_42.jpg" /></span></a></li>
+		<li><a href="#">43<span><img src="img/inputs/boulogne_ortho_43.jpg" /></span></a></li>
+		<li><a href="#">44<span><img src="img/inputs/boulogne_ortho_44.jpg" /></span></a></li>
+		<li><a href="#">45<span><img src="img/inputs/boulogne_ortho_45.jpg" /></span></a></li>
+		<li><a href="#">46<span><img src="img/inputs/boulogne_ortho_46.jpg" /></span></a></li>
+		<li><a href="#">47<span><img src="img/inputs/boulogne_ortho_47.jpg" /></span></a></li>
 </div>
 
 
