@@ -39,7 +39,7 @@
     top: 0em;
     padding-left: 0em; }
 .gallery2 .index a span img{ /* gallery2 item content */
-    width: 80%;
+    width: 70%;
     }
 .gallery2 .index li:first-child a span {
     top: 0em;
@@ -56,11 +56,11 @@
    .gallery{position:relative;width:auto;height:400px}
    .gallery .index{padding:0;margin:0;width:11em;list-style:none}
    .gallery .index li{margin:0;padding:0} 
-   .gallery .index a{display:block;background-color:#eee;border:1px solid #fff;text-decoration:none;width:9em;padding:5px}
+   .gallery .index a{display:block;background-color:#eee;border:1px solid #fff;text-decoration:none;width:13em;padding:5px}
    .gallery .index a span{display:block;position:absolute;left:-9999px;top:0;padding-left:2em}
-   .gallery .index li:first-child a span{left:9em;z-index:99}
+   .gallery .index li:first-child a span{left:12em;z-index:99}
    .gallery .index a:hover{ border: 1px solid #888888;}
-   .gallery .index a:hover span{left:9em;z-index:100}
+   .gallery .index a:hover span{left:12em;z-index:100}
    .gallery .index a span img{ width: 80%; }
 </style>
 
@@ -80,7 +80,11 @@
 			   </ul>
 			</div>
          <center>
-         <img style="width:50%" src="fig.png" class="img-responsive" alt="Example results from the paper">
+            <!-- <img style="width:10%" src="img/snap_site0.jpg" class="img-responsive" alt="Example results from the paper">-->
+         <img style="height:200px" src="img/snap_site0.jpg" alt="Example results from the paper">
+         <img style="height:200px" src="img/snap_site1.jpg" alt="Example results from the paper">
+         <img style="height:200px" src="img/snap_site2.jpg" alt="Example results from the paper">
+         <img style="height:200px" src="img/snap_site3.jpg" alt="Example results from the paper">
          </center>
 			<h4>Abstract</h4>
 			<p class="text-justify">
@@ -95,7 +99,7 @@
 
 
 
-         <h3>Input data: The IARPA MVS challenge dataset</h3>
+         <h3>About the IARPA MVS challenge dataset</h3>
          <center>
          <a href="footprints.html">
          <img style="width:35%" src="img/footprints47.jpg" alt="Footprints of the 47 images">
@@ -105,16 +109,16 @@
 
 
 			<p>
-         The IARPA MVS dataset contains 47 WorldView images of Buenos Aires taken over a period of 14 months.
-         An orthorectified view of the whole scene can be seen <a href=footprints.html>here</a>. 
+         <a href="http://www.jhuapl.edu/satellite-benchmark.html">The IARPA MVS dataset</a> contains 47 WorldView images of Buenos Aires taken over a period of 14 months.
+         An orthorectified view of the whole scene can be seen <a href=footprints.html><b>here</b></a>. 
          </p>
 
 
 
 
 <p>The <b>training</b> site has low-rise buildings arranged in octagonal patterns,
-and a high water tower formed by three cylinders.  In the IARPA challenge, this site 
-was used for the the explorer (preliminary) contest and lates as trining for the final contest.</p>
+and a high water tower formed by three cylinders.  In the <a href="https://www.iarpa.gov/challenges/3dchallenge.html">IARPA challenge</a>, this site 
+was used for the the explorer (preliminary) contest and lates as trining for the final contest.</p></a>
 
 <p> The following gallery shows the 47 input images cropped at size 800x600
 around the center of the water tower. Notice that the orientation and
@@ -123,7 +127,7 @@ acquisition directions.  Notice also that the dynamic range of each image is
 different, due to the seasons and to the cyrrus cover.</p>
 
 <h4>Training site crop</h4>
-<div class="gallery2" style="height:500px">
+<div class="gallery2" style="height:400px">
 	<ul class="index">
 		<li><a href="#">01<span><img src="img/inputs/voulogne_original_01.jpg" /></span></a></li>
 		<li><a href="#">02<span><img src="img/inputs/voulogne_original_02.jpg" /></span></a></li>
@@ -182,48 +186,48 @@ different, due to the seasons and to the cyrrus cover.</p>
 All the results below are obtaned by merging the the first N pairs (usually N=50) ordered according to the proposed heuristic criterion described in the paper.
 
 <h4>Training site</h4>
-<div class="gallery" style="height:600px">
+<div class="gallery" style="height:550px">
 	<ul class="index">
-      <li><a href="#">median aggregation of 700 pairs<span><img src="img/explorer/fusion_heuristicNEW_N700_med.png" /><img style="width:35px" src="img/explorer/colorbar_17_34_training_site.png" /></span></a></li>
-      <li><a href="#">median aggregation of 50 pairs<span><img src="img/explorer/fusion_heuristicNEW_N50_med.png" /><img style="width:35px" src="img/explorer/colorbar_17_34_training_site.png" /></span></a></li>
-      <li><a href="#">k-medians aggregation of 50 pairs<span><img src="img/explorer/fusion_heuristicNEW_N50_kmedianslow.png" /><img style="width:35px" src="img/explorer/colorbar_17_34_training_site.png" /></span></a></li>
+      <li><a href="#">median of 700 pairs<span><img src="img/explorer/fusion_heuristicNEW_N700_med.png" /><img style="width:35px" src="img/explorer/colorbar_17_34_training_site.png" /></span></a></li>
+      <li><a href="#">median of 50 pairs<span><img src="img/explorer/fusion_heuristicNEW_N50_med.png" /><img style="width:35px" src="img/explorer/colorbar_17_34_training_site.png" /></span></a></li>
+      <li><a href="#">k-medians of 50 pairs<span><img src="img/explorer/fusion_heuristicNEW_N50_kmedianslow.png" /><img style="width:35px" src="img/explorer/colorbar_17_34_training_site.png" /></span></a></li>
       <li><a href="#">ground-truth<span><img src="img/explorer/Explorern.png "/><img style="width:35px" src="img/explorer/colorbar_17_34_training_site.png" /></span></a></li>
-      <li><a href="#">error median aggregation of 700 pairs<span><img src="img/explorer/fusion_heuristicNEW_N700_med_diff.png" /><img style="width:35px" src="img/explorer/colorbar_0_12_diff.png" /></span></a></li>
-      <li><a href="#">error median aggregation of 50 pairs<span><img src="img/explorer/fusion_heuristicNEW_N50_med_diff.png" /><img style="width:35px" src="img/explorer/colorbar_0_12_diff.png" /></span></a></li>
-      <li><a href="#">error k-medians aggregation of 50 pairs<span><img src="img/explorer/fusion_heuristicNEW_N50_kmedianslow_diff.png" /><img style="width:35px" src="img/explorer//colorbar_0_12_diff.png" /></span></a></li>
+      <li><a href="#">error median of 700 pairs<span><img src="img/explorer/fusion_heuristicNEW_N700_med_diff.png" /><img style="width:35px" src="img/explorer/colorbar_0_12_diff.png" /></span></a></li>
+      <li><a href="#">error median of 50 pairs<span><img src="img/explorer/fusion_heuristicNEW_N50_med_diff.png" /><img style="width:35px" src="img/explorer/colorbar_0_12_diff.png" /></span></a></li>
+      <li><a href="#">error k-medians of 50 pairs<span><img src="img/explorer/fusion_heuristicNEW_N50_kmedianslow_diff.png" /><img style="width:35px" src="img/explorer//colorbar_0_12_diff.png" /></span></a></li>
 </div>
 
 
 <h4>Test site1</h4>
-<div class="gallery" style="height:600px">
+<div class="gallery" style="height:550px">
 	<ul class="index">
-		<li><a href="#">median aggregation of 50 pairs<span><img src="img/master/all_pairs_site1_fusion_heuristicNEW_N50_med_.png" /></span></a></li>
-		<li><a href="#">k-medians aggregation of 50 pairs<span><img src="img/master/all_pairs_site1_fusion_heuristicNEW_N50_kmedianslow_.png" /></span></a></li>
+		<li><a href="#">median of 50 pairs<span><img src="img/master/all_pairs_site1_fusion_heuristicNEW_N50_med_.png" /></span></a></li>
+		<li><a href="#">k-medians of 50 pairs<span><img src="img/master/all_pairs_site1_fusion_heuristicNEW_N50_kmedianslow_.png" /></span></a></li>
 		<li><a href="#">ground-truth<span><img src="img/master/MasterProvisional1nn.png "/></span></a></li>
-      <li><a href="#">error median aggregation of 50 pairs<span><img src="img/master/all_pairs_site1_fusion_heuristicNEW_N50_med__diff.png" /><img style="width:35px" src="img/explorer//colorbar_0_12_diff.png" /></span></a></li>
-      <li><a href="#">error k-medians aggregation of 50 pairs<span><img src="img/master/all_pairs_site1_fusion_heuristicNEW_N50_kmedianslow__diff.png" /><img style="width:35px" src="img/explorer//colorbar_0_12_diff.png" /></span></a></li>
+      <li><a href="#">error median of 50 pairs<span><img src="img/master/all_pairs_site1_fusion_heuristicNEW_N50_med__diff.png" /><img style="width:35px" src="img/explorer//colorbar_0_12_diff.png" /></span></a></li>
+      <li><a href="#">error k-medians of 50 pairs<span><img src="img/master/all_pairs_site1_fusion_heuristicNEW_N50_kmedianslow__diff.png" /><img style="width:35px" src="img/explorer//colorbar_0_12_diff.png" /></span></a></li>
 </div>
 
 
 <h4>Test site2</h4>
-<div class="gallery" style="height:600px">
+<div class="gallery" style="height:550px">
 	<ul class="index">
-		<li><a href="#">median aggregation of 50 pairs<span><img src="img/master/all_pairs_site2_fusion_heuristicNEW_N50_med_.png" /></span></a></li>
-		<li><a href="#">k-medians aggregation of 50 pairs<span><img src="img/master/all_pairs_site2_fusion_heuristicNEW_N50_kmedianslow_.png" /></span></a></li>
+		<li><a href="#">median of 50 pairs<span><img src="img/master/all_pairs_site2_fusion_heuristicNEW_N50_med_.png" /></span></a></li>
+		<li><a href="#">k-medians of 50 pairs<span><img src="img/master/all_pairs_site2_fusion_heuristicNEW_N50_kmedianslow_.png" /></span></a></li>
 		<li><a href="#">ground-truth<span><img src="img/master/MasterProvisional2nn.png "/></span></a></li>
-      <li><a href="#">error median aggregation of 50 pairs<span><img src="img/master/all_pairs_site2_fusion_heuristicNEW_N50_med__diff.png" /><img style="width:35px" src="img/explorer//colorbar_0_12_diff.png" /></span></a></li>
-      <li><a href="#">error k-medians aggregation of 50 pairs<span><img src="img/master/all_pairs_site2_fusion_heuristicNEW_N50_kmedianslow__diff.png" /><img style="width:35px" src="img/explorer//colorbar_0_12_diff.png" /></span></a></li>
+      <li><a href="#">error median of 50 pairs<span><img src="img/master/all_pairs_site2_fusion_heuristicNEW_N50_med__diff.png" /><img style="width:35px" src="img/explorer//colorbar_0_12_diff.png" /></span></a></li>
+      <li><a href="#">error k-medians of 50 pairs<span><img src="img/master/all_pairs_site2_fusion_heuristicNEW_N50_kmedianslow__diff.png" /><img style="width:35px" src="img/explorer//colorbar_0_12_diff.png" /></span></a></li>
 </div>
 
 
 <h4>Test site3</h4>
-<div class="gallery" style="height:600px">
+<div class="gallery" style="height:550px">
 	<ul class="index">
-		<li><a href="#">median aggregation of 50 pairs<span><img src="img/master/all_pairs_site3_fusion_heuristicNEW_N50_med_.png" /></span></a></li>
-		<li><a href="#">k-medians aggregation of 50 pairs<span><img src="img/master/all_pairs_site3_fusion_heuristicNEW_N50_kmedianslow_.png" /></span></a></li>
+		<li><a href="#">median of 50 pairs<span><img src="img/master/all_pairs_site3_fusion_heuristicNEW_N50_med_.png" /></span></a></li>
+		<li><a href="#">k-medians of 50 pairs<span><img src="img/master/all_pairs_site3_fusion_heuristicNEW_N50_kmedianslow_.png" /></span></a></li>
 		<li><a href="#">ground-truth<span><img src="img/master/MasterProvisional3nn.png "/></span></a></li>
-      <li><a href="#">error median aggregation of 50 pairs<span><img src="img/master/all_pairs_site3_fusion_heuristicNEW_N50_med__diff.png" /><img style="width:35px" src="img/explorer//colorbar_0_12_diff.png" /></span></a></li>
-      <li><a href="#">error k-medians aggregation of 50 pairs<span><img src="img/master/all_pairs_site3_fusion_heuristicNEW_N50_kmedianslow__diff.png" /><img style="width:35px" src="img/explorer//colorbar_0_12_diff.png" /></span></a></li>
+      <li><a href="#">error median of 50 pairs<span><img src="img/master/all_pairs_site3_fusion_heuristicNEW_N50_med__diff.png" /><img style="width:35px" src="img/explorer//colorbar_0_12_diff.png" /></span></a></li>
+      <li><a href="#">error k-medians of 50 pairs<span><img src="img/master/all_pairs_site3_fusion_heuristicNEW_N50_kmedianslow__diff.png" /><img style="width:35px" src="img/explorer//colorbar_0_12_diff.png" /></span></a></li>
 </div>
 
 
@@ -232,7 +236,7 @@ All the results below are obtaned by merging the the first N pairs (usually N=50
 
          <h3>Online demo</h3>
 			<p>
-         An online demo for <strong>MGM</strong> is available <!--<a href="http://boucantrin.ovh.hw.ipol.im:8888/mgm/">here</a> and --><a href="http://dev.ipol.im/~facciolo/ipol_demo/workshop_mgm/">here</a>.
+         An online demo for <strong>MGM</strong> is available <!--<a href="http://boucantrin.ovh.hw.ipol.im:8888/mgm/">here</a> and --><a href="http://dev.ipol.im/~facciolo/ipol_demo/workshop_mgm/"><b>here</b></a>.
 			</p>
 
 
