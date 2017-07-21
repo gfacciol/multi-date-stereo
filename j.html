@@ -3,12 +3,8 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="stylesheet" href="css/bootstrap.min.css">
 		<style>
-			table.table-fixed {table-layout: fixed; max-width: 45em;}
-			td.max {font-weight: bold;}
 			div.limited {max-width: 66em;}
-			div#preview_box {min-height: 600px;}
 		</style>
 
 <style>
@@ -19,7 +15,7 @@
 .gallery2 .index {
     padding: 0;
     margin: 0;
-    width: 10.5em;
+    width: 11.5em;
     list-style: none; }
 .gallery2 .index li {
     margin: 0;
@@ -30,8 +26,8 @@
     background-color: #EEEEEE;
     border: 1px solid #FFFFFF;
     text-decoration: none;
-    width: 1.9em;
-    padding: 6px; }
+    width: 1.3em;
+    padding: 4px; }
 .gallery2 .index a span { /* gallery2 item content */
     display: block;
     position: absolute;
@@ -39,16 +35,16 @@
     top: 0em;
     padding-left: 0em; }
 .gallery2 .index a span img{ /* gallery2 item content */
-    width: 70%;
+	/* width: 70%;*/
     }
 .gallery2 .index li:first-child a span {
     top: 0em;
-    left: 10.5em;
+    left: 11.5em;
     z-index: 99; }
 .gallery2 .index a:hover {
     border: 1px solid #888888; }
 .gallery2 .index a:hover span {
-    left: 10.5em;
+    left: 11.5em;
     z-index: 100; }
 </style>
 
@@ -61,7 +57,7 @@
    .gallery .index li:first-child a span{left:12em;z-index:99}
    .gallery .index a:hover{ border: 1px solid #888888;}
    .gallery .index a:hover span{left:12em;z-index:100}
-   .gallery .index a span img{ width: 80%; }
+   .gallery .index a span img{ /*width: 80%;*/ }
 </style>
 
 		<title>Automatic 3D Reconstruction from Multi-Date Satellite Images</title>
@@ -71,7 +67,7 @@
 	<body>
 		<div class="container limited">
 			<div class="page-header">
-				<h2>Automatic 3D Reconstruction from Multi-Date Satellite Images</h2>
+				<h1>Automatic 3D Reconstruction from Multi-Date Satellite Images</h1>
 
 			   <ul class="list-inline">
 			   	<li>Gabriele Facciolo</li>
@@ -80,11 +76,10 @@
 			   </ul>
 			</div>
          <center>
-            <!-- <img style="width:10%" src="img/snap_site0.jpg" class="img-responsive" alt="Example results from the paper">-->
-         <img style="height:200px" src="img/snap_site0.jpg" alt="Example results from the paper">
-         <img style="height:200px" src="img/snap_site1.jpg" alt="Example results from the paper">
-         <img style="height:200px" src="img/snap_site2.jpg" alt="Example results from the paper">
-         <img style="height:200px" src="img/snap_site3.jpg" alt="Example results from the paper">
+         <img src="img/ph200_site0.png" alt="Example results from the paper">
+         <img src="img/ph200_site1.png" alt="Example results from the paper">
+         <img src="img/ph200_site2.png" alt="Example results from the paper">
+         <img src="img/ph200_site3.png" alt="Example results from the paper">
          </center>
 			<h4>Abstract</h4>
 			<p class="text-justify">
@@ -113,11 +108,11 @@
             (*) The method relies on the open source <a href="https://github.com/MISS3D/s2p"><i>S2P satellite stereo pipeline</i></a>.
 
 
-         <h3>About the IARPA MVS challenge dataset</h3>
+         <h2>About the IARPA MVS challenge dataset</h2>
          <center>
          <a href="footprints.html">
-         <img style="width:40%" src="img/footprints47.jpg" alt="Footprints of the 47 images">
-         <img style="width:40%" src="img/footprints47_angles2.jpg" alt="Viewing direction of the images">
+         <img src="img/pfootprints47.png" alt="Footprints of the 47 images">
+         <img src="img/pfootprints47_angles2.png" alt="Viewing direction of the images">
          </a>
          </center>
 
@@ -140,8 +135,8 @@ the ground resolution of each image is different, due to the arbitrary
 acquisition directions.  Notice also that the dynamic range of each image is
 different, due to the seasons and to the cirrus cover.</p>
 
-<h4>Training site crop</h4>
-<div class="gallery2" style="height:400px">
+<h3>Training site crop</h3>
+<div class="gallery2" style="height:600px">
 	<ul class="index">
 		<li><a href="#">01<span><img src="img/inputs/voulogne_original_01.jpg" /></span></a></li>
 		<li><a href="#">02<span><img src="img/inputs/voulogne_original_02.jpg" /></span></a></li>
@@ -173,19 +168,19 @@ different, due to the seasons and to the cirrus cover.</p>
 		<li><a href="#">28<span><img src="img/inputs/voulogne_original_28.jpg" /></span></a></li>
 		<li><a href="#">29<span><img src="img/inputs/voulogne_original_29.jpg" /></span></a></li>
 		<li><a href="#">30<span><img src="img/inputs/voulogne_original_30.jpg" /></span></a></li>
-		<li><a href="#">31<span><img src="img/inputs/voulogne_original_31.jpg" /></span></a></li>
-		<li><a href="#">32<span><img src="img/inputs/voulogne_original_32.jpg" /></span></a></li>
-		<li><a href="#">33<span><img src="img/inputs/voulogne_original_33.jpg" /></span></a></li>
-		<li><a href="#">34<span><img src="img/inputs/voulogne_original_34.jpg" /></span></a></li>
 		<li><a href="#"><b>35</b><span><img src="img/inputs/voulogne_original_35.jpg" /></span></a></li>
 		<li><a href="#"><b>36</b><span><img src="img/inputs/voulogne_original_36.jpg" /></span></a></li>
 		<li><a href="#"><b>37</b><span><img src="img/inputs/voulogne_original_37.jpg" /></span></a></li>
 		<li><a href="#"><b>38</b><span><img src="img/inputs/voulogne_original_38.jpg" /></span></a></li>
 		<li><a href="#"><b>39</b><span><img src="img/inputs/voulogne_original_39.jpg" /></span></a></li>
 		<li><a href="#"><b>40</b><span><img src="img/inputs/voulogne_original_40.jpg" /></span></a></li>
-		<li><a href="#">41<span><img src="img/inputs/voulogne_original_41.jpg" /></span></a></li>
+		<li><a href="#">31<span><img src="img/inputs/voulogne_original_31.jpg" /></span></a></li>
+		<li><a href="#">32<span><img src="img/inputs/voulogne_original_32.jpg" /></span></a></li>
+		<li><a href="#">33<span><img src="img/inputs/voulogne_original_33.jpg" /></span></a></li>
+		<li><a href="#">34<span><img src="img/inputs/voulogne_original_34.jpg" /></span></a></li>
 		<li><a href="#"><b>42</b><span><img src="img/inputs/voulogne_original_42.jpg" /></span></a></li>
 		<li><a href="#"><b>43</b><span><img src="img/inputs/voulogne_original_43.jpg" /></span></a></li>
+		<li><a href="#">41<span><img src="img/inputs/voulogne_original_41.jpg" /></span></a></li>
 		<li><a href="#"><b>44</b><span><img src="img/inputs/voulogne_original_44.jpg" /></span></a></li>
 		<li><a href="#"><b>45</b><span><img src="img/inputs/voulogne_original_45.jpg" /></span></a></li>
 		<li><a href="#"><b>46</b><span><img src="img/inputs/voulogne_original_46.jpg" /></span></a></li>
@@ -195,13 +190,13 @@ different, due to the seasons and to the cirrus cover.</p>
 
 
 
-<h3>Additional results</h3>
+<h2>Additional results</h2>
 
 
 All the results below are obtaned by merging the DMS obtained from the first N image pairs (usually N=50). The image pairs are ordered according to the proposed heuristic criterion described in the paper. The heights are in meters.
 
-<h4>Training site</h4>
-<div class="gallery" style="height:550px">
+<h3>Training site</h3>
+<div class="gallery" style="height:733px">
 	<ul class="index">
 		<li><a href="#"><b>ground-truth</b><span><img src="img/flat/p3_psh_Z0.jpg"/><img style="width:6%" src="img/flat/legend_Z0.png" /></span></a></li>
       <li><a href="#">median of 700 pairs<span><img src="img/flat/p3_psh_rs0_fu_heNEW_N700_med.jpg" /><img style="width:6%" src="img/flat/legend_Z0.png" /></span></a></li>
@@ -214,38 +209,38 @@ All the results below are obtaned by merging the DMS obtained from the first N i
 </div>
 
 
-<h4>Test site1</h4>
-<div class="gallery" style="height:550px">
+<h3>Test site1</h3>
+<div class="gallery" style="height:544px">
 	<ul class="index">
-		<li><a href="#"><b>ground-truth</b><span><img src="img/flat/psh_Z1.jpg"/><img style="width:6%" src="img/flat/legend_Z1.png" /></span></a></li>
-      <li><a href="#">median of 50 pairs<span><img src="img/flat/psh_rs1_fu_heNEW_N50_med.jpg" /><img style="width:6%" src="img/flat/legend_Z1.png" /></span></a></li>
-      <li><a href="#">k-medians of 50 pairs<span><img src="img/flat/psh_rs1_fu_heNEW_N50_kmedianslow.jpg" /><img style="width:6%" src="img/flat/legend_Z1.png" /></span></a></li>
-      <li><a href="#">error (median of 50 pairs)<span><img src="img/flat/diff_rs1_fu_heNEW_N50_med.jpg" /><img style="width:6%" src="img/flat/l_diff_rs1_fu_heNEW_N50_kmedianslow.png" /></span></a></li>
-      <li><a href="#">error (k-medians of 50 pairs)<span><img src="img/flat/diff_rs1_fu_heNEW_N50_kmedianslow.jpg" /><img style="width:6%" src="img/flat/l_diff_rs1_fu_heNEW_N50_kmedianslow.png" /></span></a></li>
+		<li><a href="#"><b>ground-truth</b><span><img src="img/flat/p2_psh_Z1.jpg"/><img style="width:6%" src="img/flat/legend_Z1.png" /></span></a></li>
+      <li><a href="#">median of 50 pairs<span><img src="img/flat/p2_psh_rs1_fu_heNEW_N50_med.jpg" /><img style="width:6%" src="img/flat/legend_Z1.png" /></span></a></li>
+      <li><a href="#">k-medians of 50 pairs<span><img src="img/flat/p2_psh_rs1_fu_heNEW_N50_kmedianslow.jpg" /><img style="width:6%" src="img/flat/legend_Z1.png" /></span></a></li>
+      <li><a href="#">error (median of 50 pairs)<span><img src="img/flat/p2_diff_rs1_fu_heNEW_N50_med.jpg" /><img style="width:6%" src="img/flat/l_diff_rs1_fu_heNEW_N50_kmedianslow.png" /></span></a></li>
+      <li><a href="#">error (k-medians of 50 pairs)<span><img src="img/flat/p2_diff_rs1_fu_heNEW_N50_kmedianslow.jpg" /><img style="width:6%" src="img/flat/l_diff_rs1_fu_heNEW_N50_kmedianslow.png" /></span></a></li>
 	</ul>
 </div>
 
 
-<h4>Test site2</h4>
-<div class="gallery" style="height:550px">
+<h3>Test site2</h3>
+<div class="gallery" style="height:636px">
 	<ul class="index">
-		<li><a href="#"><b>ground-truth</b><span><img src="img/flat/psh_Z2.jpg"/><img style="width:6%" src="img/flat/legend_Z2.png" /></span></a></li>
-      <li><a href="#">median of 50 pairs<span><img src="img/flat/psh_rs2_fu_heNEW_N50_med.jpg" /><img style="width:6%" src="img/flat/legend_Z2.png" /></span></a></li>
-      <li><a href="#">k-medians of 50 pairs<span><img src="img/flat/psh_rs2_fu_heNEW_N50_kmedianslow.jpg" /><img style="width:6%" src="img/flat/legend_Z2.png" /></span></a></li>
-      <li><a href="#">error (median of 50 pairs)<span><img src="img/flat/diff_rs2_fu_heNEW_N50_med.jpg" /><img style="width:6%" src="img/flat/l_diff_rs2_fu_heNEW_N50_kmedianslow.png" /></span></a></li>
-      <li><a href="#">error (k-medians of 50 pairs)<span><img src="img/flat/diff_rs2_fu_heNEW_N50_kmedianslow.jpg" /><img style="width:6%" src="img/flat/l_diff_rs2_fu_heNEW_N50_kmedianslow.png" /></span></a></li>
+		<li><a href="#"><b>ground-truth</b><span><img             src="img/flat/p2_psh_Z2.jpg"/><img style="width:6%" src="img/flat/legend_Z2.png" /></span></a></li>
+      <li><a href="#">median of 50 pairs<span><img            src="img/flat/p2_psh_rs2_fu_heNEW_N50_med.jpg" /><img style="width:6%" src="img/flat/legend_Z2.png" /></span></a></li>
+      <li><a href="#">k-medians of 50 pairs<span><img         src="img/flat/p2_psh_rs2_fu_heNEW_N50_kmedianslow.jpg" /><img style="width:6%" src="img/flat/legend_Z2.png" /></span></a></li>
+      <li><a href="#">error (median of 50 pairs)<span><img    src="img/flat/p2_diff_rs2_fu_heNEW_N50_med.jpg" /><img style="width:6%" src="img/flat/l_diff_rs2_fu_heNEW_N50_kmedianslow.png" /></span></a></li>
+      <li><a href="#">error (k-medians of 50 pairs)<span><img src="img/flat/p2_diff_rs2_fu_heNEW_N50_kmedianslow.jpg" /><img style="width:6%" src="img/flat/l_diff_rs2_fu_heNEW_N50_kmedianslow.png" /></span></a></li>
 	</ul>
 </div>
 
 
-<h4>Test site3</h4>
+<h3>Test site3</h3>
 <div class="gallery" style="height:550px">
 	<ul class="index">
-		<li><a href="#"><b>ground-truth</b><span><img src="img/flat/psh_Z3.jpg"/><img style="width:6%" src="img/flat/legend_Z3.png" /></span></a></li>
-      <li><a href="#">median of 50 pairs<span><img src="img/flat/psh_rs3_fu_heNEW_N50_med.jpg" /><img style="width:6%" src="img/flat/legend_Z3.png" /></span></a></li>
-      <li><a href="#">k-medians of 50 pairs<span><img src="img/flat/psh_rs3_fu_heNEW_N50_kmedianslow.jpg" /><img style="width:6%" src="img/flat/legend_Z3.png" /></span></a></li>
-      <li><a href="#">error (median of 50 pairs)<span><img src="img/flat/diff_rs3_fu_heNEW_N50_med.jpg" /><img style="width:6%" src="img/flat/l_diff_rs3_fu_heNEW_N50_kmedianslow.png" /></span></a></li>
-      <li><a href="#">error (k-medians of 50 pairs)<span><img src="img/flat/diff_rs3_fu_heNEW_N50_kmedianslow.jpg" /><img style="width:6%" src="img/flat/l_diff_rs3_fu_heNEW_N50_kmedianslow.png" /></span></a></li>
+		<li><a href="#"><b>ground-truth</b><span><img             src="img/flat/p2_psh_Z3.jpg"/><img style="width:6%" src="img/flat/legend_Z3.png" /></span></a></li>
+      <li><a href="#">median of 50 pairs<span><img            src="img/flat/p2_psh_rs3_fu_heNEW_N50_med.jpg" /><img style="width:6%" src="img/flat/legend_Z3.png" /></span></a></li>
+      <li><a href="#">k-medians of 50 pairs<span><img         src="img/flat/p2_psh_rs3_fu_heNEW_N50_kmedianslow.jpg" /><img style="width:6%" src="img/flat/legend_Z3.png" /></span></a></li>
+      <li><a href="#">error (median of 50 pairs)<span><img    src="img/flat/p2_diff_rs3_fu_heNEW_N50_med.jpg" /><img style="width:6%" src="img/flat/l_diff_rs3_fu_heNEW_N50_kmedianslow.png" /></span></a></li>
+      <li><a href="#">error (k-medians of 50 pairs)<span><img src="img/flat/p2_diff_rs3_fu_heNEW_N50_kmedianslow.jpg" /><img style="width:6%" src="img/flat/l_diff_rs3_fu_heNEW_N50_kmedianslow.png" /></span></a></li>
 	</ul>
 </div>
 
