@@ -7,9 +7,9 @@
 #         png visualization of diff with respect to GT
 #         colorbars for everyfile
 #
-# Needed binaries:
-# plambda, palette, ncc_apply_shift, ncc_compute_shift, autotrim, convert
-# simpois, blur, qauto, downsa
+# Needed binaries and scripts:
+# plambda, palette, ncc_apply_shift, ncc_compute_shift, autotrim, convert,
+# simpois, blur, qauto, downsa, elevate, ijmesh, gdalcopyproj.py
 
 # base names
 NAMES          = $(shell cat TARGETS.mk)
@@ -35,8 +35,12 @@ P3_PNGS  = $(addprefix p3_,$(P1_PNGS))
 PNGS     = $(P1_PNGS) $(P2_PNGS) $(P3_PNGS)
 JPGS     = $(PNGS:%.png=%.jpg)
 
+RGB_PLY  = $(TIFS:%.tif=c_%.ply)
+GEO_PLY  = $(TIFS:%.tif=g_%.ply)
+PLYS     = $(RGB_PLY) $(GEO_PLY)
+
 # default target
-default: $(JPGS)
+default: $(JPGS) $(PLYS)
 
 # ground truths: change -9999 to NAN and trim
 Z%.tif: S%.tif
@@ -85,8 +89,19 @@ rs3%.range: Z3.range ; cp Z3.range $@
 p2_%.png: %.png ; downsa v 2 $^ $@
 p3_%.png: %.png ; downsa v 3 $^ $@
 
+# create colored ply from dsm and colors
+c_%.ply: %.tif psh_%.png
+	plambda $*.tif "3 * " | ijmesh psh_$*.png - > $@
+
+# create georefenced ply from dsm
+g_%.ply: %.tif
+	cp $*.tif geo_$*.tif
+	gdalcopyproj.py S`echo $^|tr -c -d [:digit:]|cut -c1`.tif geo_$^
+	elevate geo_$^ -p $@ > /dev/null
+#	rm geo_$^
+
 clean:
-	$(RM) $(PNGS) $(TIFS) $(JPGS) $(RANGES_REG) legend_*.png l_*png
+	$(RM) $(PNGS) $(TIFS) $(JPGS) $(RANGES_REG) $(PLYS) geo_*.tif legend_*.png l_*png
 
 .PRECIOUS: $(TIFS) $(PNGS) # preserve intermediate files
 .PHONY: default clean
