@@ -9,6 +9,7 @@
 #
 # Needed binaries:
 # plambda, palette, ncc_apply_shift, ncc_compute_shift, autotrim, convert
+# simpois, blur, qauto
 
 # base names
 NAMES          = $(shell cat TARGETS.mk)
@@ -25,12 +26,13 @@ RANGES_GTS     = $(NORMALIZED_GTS:%.tif=%.range)   # view range of GT (input)
 RANGES_REG     = $(DSMS_REG:%.tif=%.range)         # view range of dsms (computed)
 
 # aggregated collections of files
-TIFS    = $(DSMS_REG) $(NORMALIZED_GTS)
-P1_PNGS = $(PNG_REG) $(PNG_GTS) $(PNG_DIFF)
-P2_PNGS = $(addprefix p2_,$(P1_PNGS))
-P3_PNGS = $(addprefix p3_,$(P1_PNGS))
-PNGS    = $(P1_PNGS) $(P2_PNGS) $(P3_PNGS)
-JPGS    = $(PNGS:%.png=%.jpg)
+TIFS     = $(DSMS_REG) $(NORMALIZED_GTS)
+PSH_PNGS = $(addprefix psh_,$(PNG_GTS) $(PNG_REG))
+P1_PNGS  = $(SH_PNGS) $(PNG_DIFF)
+P2_PNGS  = $(addprefix p2_,$(P1_PNGS))
+P3_PNGS  = $(addprefix p3_,$(P1_PNGS))
+PNGS     = $(P1_PNGS) $(P2_PNGS) $(P3_PNGS)
+JPGS     = $(PNGS:%.png=%.jpg)
 
 # default target
 default: $(JPGS)
@@ -46,6 +48,14 @@ Z%.png: Z%.tif Z%.range
 # render registered files using the corresponding range
 rs%.png: rs%.tif rs%.range
 	palette `cat rs$*.range` dem $< -l legend_$@ $@
+
+# compute the shadowmap of a dsm (as a png)
+sh_%.png: %.tif
+	simpois -i $^|plambda - 'x,l -1 *'|blur c 1|plambda - 0\ fmin|qauto - $@
+
+# combine a shadowmap with a colormap
+psh_%.png: %.png sh_%.png
+	plambda $^ "255 - +" -o $@
 
 # render error images using a centered palette
 diff_rs0%.png:Z0.tif rs0%.tif;plambda $^ rot\ -|palette -10 10 nice - $@ -l l_$@
@@ -77,5 +87,5 @@ p3_%.png: %.png ; downsa v 3 $^ $@
 clean:
 	$(RM) $(PNGS) $(TIFS) $(JPGS) $(RANGES_REG) legend_*.png l_*png
 
-.SECONDARY: $(NORMALIZED_GTS) $(TIFFS) $(JPGS) # preserve intermediate files
+.PRECIOUS: $(NORMALIZED_GTS) $(TIFFS) $(JPGS) # preserve intermediate files
 .PHONY: default clean
