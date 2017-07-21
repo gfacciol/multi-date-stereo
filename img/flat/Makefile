@@ -9,7 +9,7 @@
 #
 # Needed binaries:
 # plambda, palette, ncc_apply_shift, ncc_compute_shift, autotrim, convert
-# simpois, blur, qauto
+# simpois, blur, qauto, downsa
 
 # base names
 NAMES          = $(shell cat TARGETS.mk)
