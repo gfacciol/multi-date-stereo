@@ -8,7 +8,7 @@
 #         colorbars for everyfile
 #
 # Needed binaries:
-# plambda, palette, ncc_apply_shift, ncc_compute_shift, autotrim
+# plambda, palette, ncc_apply_shift, ncc_compute_shift, autotrim, convert
 
 # base names
 NAMES          = $(shell cat TARGETS.mk)
@@ -21,11 +21,19 @@ DSMS_DIFF      = $(addprefix diff_, $(DSMS_REG))   # signed error wrt. GT
 PNG_GTS        = $(NORMALIZED_GTS:%.tif=%.png)     # png of GT
 PNG_REG        = $(DSMS_REG:%.tif=%.png)           # png of registered dsm
 PNG_DIFF       = $(DSMS_DIFF:%.tif=%.png)          # png of signed errors
-RANGES_GTS     = $(NORMALIZED_GTS:%.tif=%.range)   # view range of GT
-RANGES_REG     = $(DSMS_REG:%.tif=%.range)         # view range of dsms
+RANGES_GTS     = $(NORMALIZED_GTS:%.tif=%.range)   # view range of GT (input)
+RANGES_REG     = $(DSMS_REG:%.tif=%.range)         # view range of dsms (computed)
+
+# aggregated collections of files
+TIFS    = $(DSMS_REG) $(NORMALIZED_GTS)
+P1_PNGS = $(PNG_REG) $(PNG_GTS) $(PNG_DIFF)
+P2_PNGS = $(addprefix p2_,$(P1_PNGS))
+P3_PNGS = $(addprefix p3_,$(P1_PNGS))
+PNGS    = $(P1_PNGS) $(P2_PNGS) $(P3_PNGS)
+JPGS    = $(PNGS:%.png=%.jpg)
 
 # default target
-default: $(PNG_GTS) $(PNG_REG) $(PNG_DIFF)
+default: $(JPGS)
 
 # ground truths: change -9999 to NAN and trim
 Z%.tif: S%.tif
@@ -46,10 +54,12 @@ diff_rs2%.png:Z2.tif rs2%.tif;plambda $^ rot\ -|palette -10 10 nice - $@ -l l_$@
 diff_rs3%.png:Z3.tif rs3%.tif;plambda $^ rot\ -|palette -20 20 nice - $@ -l l_$@
 
 # register each file to the corresponding ground truth
-rs0%.tif: Z0.tif s0%.tif ;./ncc_apply_shift s0$*.tif `./ncc_compute_shift $^` $@
-rs1%.tif: Z1.tif s1%.tif ;./ncc_apply_shift s1$*.tif `./ncc_compute_shift $^` $@
-rs2%.tif: Z2.tif s2%.tif ;./ncc_apply_shift s2$*.tif `./ncc_compute_shift $^` $@
-rs3%.tif: Z3.tif s3%.tif ;./ncc_apply_shift s3$*.tif `./ncc_compute_shift $^` $@
+# note: the registered files keep their original size, not the target size
+# (is this a bug?)
+rs0%.tif: Z0.tif s0%.tif ;./ncc_apply_shift s0$*.tif `./ncc_compute_shift $^`|plambda Z0.tif - "" -o $@
+rs1%.tif: Z1.tif s1%.tif ;./ncc_apply_shift s1$*.tif `./ncc_compute_shift $^`|plambda Z1.tif - "" -o $@
+rs2%.tif: Z2.tif s2%.tif ;./ncc_apply_shift s2$*.tif `./ncc_compute_shift $^`|plambda Z2.tif - "" -o $@
+rs3%.tif: Z3.tif s3%.tif ;./ncc_apply_shift s3$*.tif `./ncc_compute_shift $^`|plambda Z3.tif - "" -o $@
 
 # build the range for each DSM by copying that of the GT
 rs0%.range: Z0.range ; cp Z0.range $@
@@ -57,10 +67,15 @@ rs1%.range: Z1.range ; cp Z1.range $@
 rs2%.range: Z2.range ; cp Z2.range $@
 rs3%.range: Z3.range ; cp Z3.range $@
 
-TIFS = $(DSMS_REG) $(NORMALIZED_GTS)
-PNGS = $(PNG_REG) $(PNG_GTS) $(PNG_DIFF)
-clean:
-	$(RM) $(PNGS) $(TIFS) legend_*.png
+# convert png to jpg
+%.jpg: %.png ; convert $^ $@
 
-.SECONDARY: $(NORMALIZED_GTS) $(DSMS_REG) $(DSMS_DIFF)
+# zoom pngs out by factors 2 and 3
+p2_%.png: %.png ; downsa v 2 $^ $@
+p3_%.png: %.png ; downsa v 3 $^ $@
+
+clean:
+	$(RM) $(PNGS) $(TIFS) $(JPGS) $(RANGES_REG) legend_*.png l_*png
+
+.SECONDARY: $(NORMALIZED_GTS) $(TIFFS) $(JPGS) # preserve intermediate files
 .PHONY: default clean

@@ -59,20 +59,8 @@ cp $DIR1/fusion_heuristicNEW_N50/med.tif                         flat/s1_fu_heNE
 cp $DIR2/fusion_heuristicNEW_N50/med.tif                         flat/s2_fu_heNEW_N50_med.tif
 cp $DIR3/fusion_heuristicNEW_N50/med.tif                         flat/s3_fu_heNEW_N50_med.tif
 
-# trim the ground truths so that they are easy to register
-for i in 0 1 2 3; do
-	autotrim flat/S$i.tif flat/S$i.tiff
-done
-
-# register each image to the corresponding ground truth
-cd flat
-for i in 0 1 2 3; do
-	for f in s${i}_*.tif; do
-		ncc_compute_shift S$i.tiff $f > $f.reg
-		ncc_apply_shift $f `cat $f.reg` r$f
-	done
-done
-cd -
+# do the rest of the compmutation using the makefile
+make -C flat
 
 #explorer/fusion_heuristicNEW_N50_kmedianslow_diff.jpg
 #explorer/fusion_heuristicNEW_N50_med_diff.jpg
@@ -88,4 +76,4 @@ cd -
 #master/all_pairs_site2_fusion_heuristicNEW_N50_med__diff.jpg
 #master/all_pairs_site3_fusion_heuristicNEW_N50_kmedianslow__diff.jpg
 #master/all_pairs_site3_fusion_heuristicNEW_N50_med__diff.jpg
-# NOTE: differences are actually computed here
+# NOTE: error images are actually computed by the same makefile
