@@ -25,8 +25,7 @@ RANGES_GTS     = $(NORMALIZED_GTS:%.tif=%.range)   # view range of GT
 RANGES_REG     = $(DSMS_REG:%.tif=%.range)         # view range of dsms
 
 # default target
-default: $(PNG_GTS) $(PNG_REG)
-#default: $(PNG_GTS) $(PNG_REG) $(PNG_DIFF)
+default: $(PNG_GTS) $(PNG_REG) $(PNG_DIFF)
 
 # ground truths: change -9999 to NAN and trim
 Z%.tif: S%.tif
@@ -40,6 +39,12 @@ Z%.png: Z%.tif Z%.range
 rs%.png: rs%.tif rs%.range
 	palette `cat rs$*.range` dem $< -l legend_$@ $@
 
+# render error images using a centered palette
+diff_rs0%.png:Z0.tif rs0%.tif;plambda $^ rot\ -|palette -10 10 nice - $@ -l l_$@
+diff_rs1%.png:Z1.tif rs1%.tif;plambda $^ rot\ -|palette -10 10 nice - $@ -l l_$@
+diff_rs2%.png:Z2.tif rs2%.tif;plambda $^ rot\ -|palette -10 10 nice - $@ -l l_$@
+diff_rs3%.png:Z3.tif rs3%.tif;plambda $^ rot\ -|palette -20 20 nice - $@ -l l_$@
+
 # register each file to the corresponding ground truth
 rs0%.tif: Z0.tif s0%.tif ;./ncc_apply_shift s0$*.tif `./ncc_compute_shift $^` $@
 rs1%.tif: Z1.tif s1%.tif ;./ncc_apply_shift s1$*.tif `./ncc_compute_shift $^` $@
@@ -47,8 +52,10 @@ rs2%.tif: Z2.tif s2%.tif ;./ncc_apply_shift s2$*.tif `./ncc_compute_shift $^` $@
 rs3%.tif: Z3.tif s3%.tif ;./ncc_apply_shift s3$*.tif `./ncc_compute_shift $^` $@
 
 # build the range for each DSM by copying that of the GT
-$(RANGES_REG): $(RANGES_GTS)
-	cp Z`echo $@ | cut -c3`.range $@
+rs0%.range: Z0.range ; cp Z0.range $@
+rs1%.range: Z1.range ; cp Z1.range $@
+rs2%.range: Z2.range ; cp Z2.range $@
+rs3%.range: Z3.range ; cp Z3.range $@
 
 TIFS = $(DSMS_REG) $(NORMALIZED_GTS)
 PNGS = $(PNG_REG) $(PNG_GTS) $(PNG_DIFF)
