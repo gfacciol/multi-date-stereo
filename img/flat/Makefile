@@ -67,10 +67,10 @@ diff_rs3%.png:Z3.tif rs3%.tif;plambda $^ rot\ -|palette -20 20 nice - $@ -l l_$@
 # register each file to the corresponding ground truth
 # note: the registered files keep their original size, not the target size
 # (is this a bug?)
-rs0%.tif: Z0.tif s0%.tif ;./ncc_apply_shift s0$*.tif `./ncc_compute_shift $^`|plambda Z0.tif - "" -o $@
-rs1%.tif: Z1.tif s1%.tif ;./ncc_apply_shift s1$*.tif `./ncc_compute_shift $^`|plambda Z1.tif - "" -o $@
-rs2%.tif: Z2.tif s2%.tif ;./ncc_apply_shift s2$*.tif `./ncc_compute_shift $^`|plambda Z2.tif - "" -o $@
-rs3%.tif: Z3.tif s3%.tif ;./ncc_apply_shift s3$*.tif `./ncc_compute_shift $^`|plambda Z3.tif - "" -o $@
+rs0%.tif: Z0.tif s0%.tif ;ncc_apply_shift s0$*.tif `ncc_compute_shift $^`|plambda Z0.tif - "" -o $@
+rs1%.tif: Z1.tif s1%.tif ;ncc_apply_shift s1$*.tif `ncc_compute_shift $^`|plambda Z1.tif - "" -o $@
+rs2%.tif: Z2.tif s2%.tif ;ncc_apply_shift s2$*.tif `ncc_compute_shift $^`|plambda Z2.tif - "" -o $@
+rs3%.tif: Z3.tif s3%.tif ;ncc_apply_shift s3$*.tif `ncc_compute_shift $^`|plambda Z3.tif - "" -o $@
 
 # build the range for each DSM by copying that of the GT
 rs0%.range: Z0.range ; cp Z0.range $@
