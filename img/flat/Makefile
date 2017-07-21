@@ -28,7 +28,7 @@ RANGES_REG     = $(DSMS_REG:%.tif=%.range)         # view range of dsms (compute
 # aggregated collections of files
 TIFS     = $(DSMS_REG) $(NORMALIZED_GTS)
 PSH_PNGS = $(addprefix psh_,$(PNG_GTS) $(PNG_REG))
-P1_PNGS  = $(SH_PNGS) $(PNG_DIFF)
+P1_PNGS  = $(PSH_PNGS) $(PNG_DIFF)
 P2_PNGS  = $(addprefix p2_,$(P1_PNGS))
 P3_PNGS  = $(addprefix p3_,$(P1_PNGS))
 PNGS     = $(P1_PNGS) $(P2_PNGS) $(P3_PNGS)
@@ -87,5 +87,5 @@ p3_%.png: %.png ; downsa v 3 $^ $@
 clean:
 	$(RM) $(PNGS) $(TIFS) $(JPGS) $(RANGES_REG) legend_*.png l_*png
 
-.PRECIOUS: $(NORMALIZED_GTS) $(TIFFS) $(JPGS) # preserve intermediate files
+.PRECIOUS: %.tif sh_%.png # preserve intermediate files
 .PHONY: default clean
